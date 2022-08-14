@@ -13,7 +13,7 @@ export const App = () => {
   let cryptoArrayFiltered = cryptoArray.data;
   filter &&
     (cryptoArrayFiltered = cryptoArray.data.filter(
-      crypt => crypt.symbol[0] === filter.toLocaleUpperCase()
+      crypt => crypt.symbol[0] === filter.toUpperCase()
     ));
 
   return (
@@ -25,7 +25,11 @@ export const App = () => {
         type="text"
         placeholder="Search..."
       />
-      <CryptoList cryptoArrayFiltered={cryptoArrayFiltered} />
+      {cryptoArrayFiltered.length > 0 ? (
+        <CryptoList cryptoArrayFiltered={cryptoArrayFiltered} />
+      ) : (
+        <p>Try another letter</p>
+      )}
     </Container>
   );
 };
