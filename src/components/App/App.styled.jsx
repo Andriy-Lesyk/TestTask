@@ -14,4 +14,10 @@ export const Logo = styled.img`
 `;
 export const Input = styled.input`
   width: 200px;
+  height: 20px;
+  &:hover, &:focus{
+    background-color: #f2f5f3;
+    outline: none;
+    border: 2px solid #f2f5f3;
+  }
 `;
